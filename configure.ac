@@ -44,7 +44,7 @@ then
     
     AC_SUBST(mathinc, $with_gsl/include)
 else
-    CPPFLAGS="-I$with_boost/include"
+    CPPFLAGS="-I$with_boost/include -Wl,-rpath,$with_boost/lib"
     AC_CHECK_HEADER(boost/math/distributions/binomial.hpp, [result=1], [result=0])
 
     if test $result == 0
